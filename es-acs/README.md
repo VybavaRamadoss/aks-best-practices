@@ -270,9 +270,9 @@ cd dockerimage/
 docker login
 
 #change repo name to match yours (also use ACR instead of dockerhub)
-docker build -t mohamman/my-ingest-image:1.0 .
+docker build -t ignite23.azurecr.io/my-ingest-image:1.0 .
 
-docker push mohamman/my-ingest-image:1.0
+docker push ignite23.azurecr.io/my-ingest-image:1.0
 
 ##run the job (remember to change the image name to yours) also change the parallelism and completions to match your needs
 cd ..
