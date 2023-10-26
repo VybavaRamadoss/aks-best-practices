@@ -69,9 +69,11 @@ az network vnet create \
 ```
 
 ### get the RG, VNET, and Subnet IDs
+```bash
 RG_ID=$(az group show -n $RG  --query id -o tsv)
 VNETID=$(az network vnet show -g $RG --name $AKS_VNET_NAME --query id -o tsv)
 AKS_VNET_SUBNET_ID=$(az network vnet subnet show --name $AKS_NODES_SUBNET_NAME -g $RG --vnet-name $AKS_VNET_NAME --query "id" -o tsv)
+```
 
 ### Assign the managed identity permissions on the RG and VNET
 > *NOTE:* For the purposes of this demo we are setting the rights as highly unrestricted. You will want to set the rights below to meet your security needs.
