@@ -99,6 +99,11 @@ az aks nodepool update --cluster-name Ig23elsearch \
                        --name systempool \
                        --resource-group $RG \
                       --labels acstor.azure.com/io-engine=acstor
+
+az aks nodepool update --cluster-name Ig23elsearch \
+                       --name espoolz1 \
+                       --resource-group $RG \
+                      --labels acstor.azure.com/io-engine=acstor
 ```
 
 ```bash
