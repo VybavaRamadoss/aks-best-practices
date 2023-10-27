@@ -358,7 +358,7 @@ service:
 ingress:
   ## @param ingress.enabled Enable ingress record generation for Elasticsearch
   ##
-  enabled: false
+  ##enabled: false
   ## @param ingress.pathType Ingress path type
   ##
   pathType: ImplementationSpecific
@@ -380,7 +380,10 @@ ingress:
   ##   kubernetes.io/ingress.class: nginx
   ##   cert-manager.io/cluster-issuer: cluster-issuer-name
   ##
-  annotations: {}
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+  ##annotations: {}
   ## @param ingress.tls Enable TLS configuration for the host defined at `ingress.hostname` parameter
   ## TLS certificates will be retrieved from a TLS secret with name: `{{- printf "%s-tls" .Values.ingress.hostname }}`
   ## You can:
