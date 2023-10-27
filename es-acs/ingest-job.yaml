@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: log-ingestion-job
 spec:
-  parallelism: 1  # Specify the number of desired pods
-  completions: 2  # Adjust as needed
+  parallelism: 5  # Specify the number of desired pods
+  completions: 5  # Adjust as needed
   template:
     metadata:
       labels:
@@ -12,5 +12,5 @@ spec:
     spec:
       containers:
       - name: log-ingestion-container
-        image: mohamman/my-ingest-image:6.0   ###update to your image name 
+        image: ignite23.azurecr.io/my-ingest-image:1.0   ###update to your image name 
       restartPolicy: Never
